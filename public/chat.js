@@ -11,6 +11,7 @@ btn.addEventListener("click", () => {
     message: message.value,
     username: username.value,
   });
+  message.value = "";
 });
 
 message.addEventListener("keypress", () => {

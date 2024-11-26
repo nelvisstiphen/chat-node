@@ -13,7 +13,7 @@ const server = app.listen(app.get("port"), () => {
 const socketIO = require("socket.io");
 const io = socketIO(server);
 
-//websockts
+//websockets
 io.on("connection", (socket) => {
   console.log("new connection", socket.id);
 
@@ -25,19 +25,3 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("chat:typing", data);
   });
 });
-
-/* const http = require("http").createServer(app);
-const io = require("socket.io")(http);
-
-const port = process.env.PORT || 3000;
-publicDir = express.static(`${__dirname}/public`);
-
-app.use(publicDir).get("/", (req, res) => {
-  res.sendFile(`${publicDir}index.html`);
-});
-
-http.listen(port, () => {
-  console.log("Iniciando Express y Socket en puerto:", port);
-}); */
-
-console.log("Hola Mundo! Me llamo Nelvis");
